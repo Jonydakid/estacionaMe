@@ -15,8 +15,7 @@ class Usuarios_model extends CI_Model{
 
 		    $data = array(
 		        'nomUsuario' => $this->input->post('nomUsuario'),
-		        'contraseña' => $this->input->post('contraseña'),
-				'rol' => $this->input->post('rol')
+		        'contraseña' => $this->input->post('contraseña')
 		    );
 
 		    return $this->db->insert('usuarios', $data);
@@ -33,8 +32,7 @@ class Usuarios_model extends CI_Model{
 
 		    $data = array(
 		        'nomUsuario' => $this->input->post('nomUsuario'),
-		        'contraseña' => $this->input->post('contraseña'),
-				'rol' => $this->input->post('rol')
+		        'contraseña' => $this->input->post('contraseña')
 		    );
 
 		    $this->db->where('id',$id);

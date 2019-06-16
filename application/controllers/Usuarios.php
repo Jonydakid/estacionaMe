@@ -44,7 +44,6 @@ class Usuarios extends CI_Controller {
 
             $this->form_validation->set_rules('nomUsuario', 'nomUsuario', 'required');
             $this->form_validation->set_rules('contraseña', 'contraseña', 'required');
-			$this->form_validation->set_rules('rol', 'rol', 'required');
 
             if ($this->form_validation->run() === FALSE)
             {

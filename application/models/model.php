@@ -30,7 +30,6 @@ public $_columns = array(
                 );
                 return $requiredFields;
         }
-		
         public function isNew() {
                 return $this->_columns['id'] == 0;
         }
