@@ -9,11 +9,16 @@ class Pages extends CI_Controller{
                 show_404();
         }
 
-        $data['title'] = ucfirst($page); // Capitalize the first letter
+        }
 
-        $this->load->view('templates/header', $data);
-        $this->load->view('pages/'.$page, $data);
-        $this->load->view('templates/footer', $data);
+        public function index()
+        {
+                $data['title'] = 'Home';
 
-}
-}
+                $this->load->view('templates/header', $data);
+                $this->load->view('templates/nav');
+                $this->load->view('pages/home');
+                $this->load->view('templates/footer', $data);
+        }
+
+        }
