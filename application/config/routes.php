@@ -62,4 +62,5 @@ $route['estacionamientos/index'] = 'estacionamientos/index';
 $route['estacionamientos/create'] = 'estacionamientos/create';
 $route['estacionamientos/(:any)'] = 'estacionamientos/view/$1';
 $route['estacionamientos'] = 'estacionamientos';
-$route['default_controller'] = 'usuarios';
+
+$route['default_controller'] = 'pages';
