@@ -35,7 +35,7 @@ $config['base_url'] = 'http://localhost:80/estacioname';
 | variable so that it is blank.
 |
 */
-$config['index_page'] = 'home.php';
+$config['index_page'] = 'index.php';
 
 /*
 |--------------------------------------------------------------------------
