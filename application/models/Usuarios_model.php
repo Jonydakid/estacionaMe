@@ -86,6 +86,15 @@ class Usuarios_model extends CI_Model{
 			return $this->db->get()->row('id');
 		
 		}
+		public function getRolById($id) {
+			
+			$this->db->select('rol');
+			$this->db->from('usuarios');
+			$this->db->where('id', $id);
+
+			return $this->db->get()->row('rol');
+		
+		}
 		private function hash_password($contraseña) {
 		
 			return password_hash($contraseña, PASSWORD_DEFAULT);

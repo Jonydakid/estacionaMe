@@ -24,5 +24,3 @@
 	
 </table>
 <br>
-
-<a class="btn btn-primary btn-lg active" role="button" aria-pressed="true" href="<?php echo site_url('usuarios/create'); ?>"> Crear</a>
