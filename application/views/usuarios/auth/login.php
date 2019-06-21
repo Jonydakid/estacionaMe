@@ -1,9 +1,4 @@
 <?php defined('BASEPATH') OR exit('No direct script access allowed'); ?>
- <header class="masthead">
-    <div class="container d-flex h-100 align-items-center">
-      <div class="mx-auto text-center">
-      	<div class="container">
-	<div class="row">
 <div class="container">
 	<div class="row">
 		<?php if (validation_errors()) : ?>
@@ -41,6 +36,3 @@
 		</div>
 	</div><!-- .row -->
 </div><!-- .container -->
-      </div>
-    </div>
-  </header>

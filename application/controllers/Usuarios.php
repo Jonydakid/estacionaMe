@@ -119,18 +119,18 @@ class Usuarios extends CI_Controller {
                 
                 if ($rol == 1) {
                     
-                    $this->load->view('templates/header', $data);
-                    $this->load->view('usuarios/admin', $data);
+                    $this->load->view('templates/header');
+                    $this->load->view('usuarios/arrendador', $data);
                     $this->load->view('templates/footer');
                 }elseif ($rol == 2) {
                     
-                    $this->load->view('templates/header', $data);
-                    $this->load->view('usuarios/arrendador', $data);
-                    $this->load->view('templates/footer');
-                }elseif ($rol == 3) {
-                    
-                    $this->load->view('templates/header', $data);
+                    $this->load->view('templates/header');
                     $this->load->view('usuarios/arrendatario', $data);
+                    $this->load->view('templates/footer');
+                }elseif ($rol == 0) {
+                    
+                    $this->load->view('templates/header');
+                    $this->load->view('usuarios/admin', $data);
                     $this->load->view('templates/footer');
                 }
                 
@@ -181,7 +181,14 @@ class Usuarios extends CI_Controller {
 
             $nomUsuario = $this->input->post('nomUsuario');
             $contraseña = $this->input->post('contraseña');
-                          
+              
+
+                $this->load->view('templates/header');
+                $this->load->view('usuarios/arrendatario', $data);
+                $this->load->view('templates/footer');
+            
+            
+            
             if ($this->Usuarios_model->verificarLogin($nomUsuario, $contraseña)) {
                 
                 $id      = $this->Usuarios_model->getIdByNomUsuario($nomUsuario);
@@ -191,24 +198,11 @@ class Usuarios extends CI_Controller {
                 $_SESSION['nomUsuario']     = (string)$usuario->nomUsuario;
                 $_SESSION['logged_in']    = (bool)true;
                 
-                $rol = $this->Usuarios_model->getRolById($id);
                 // user login ok
-                if ($rol == 1) {
-                    
-                    $this->load->view('templates/header');
-                    $this->load->view('usuarios/admin', $data);
-                    $this->load->view('templates/footer');
-                }elseif ($rol == 2) {
-                    
-                    $this->load->view('templates/header');
-                    $this->load->view('usuarios/arrendador', $data);
-                    $this->load->view('templates/footer');
-                }elseif ($rol == 3) {
-                    
-                    $this->load->view('templates/header');
-                    $this->load->view('usuarios/arrendatario', $data);
-                    $this->load->view('templates/footer');
-                }
+                
+                            $this->load->view('templates/header', $data);
+                            $this->load->view('usuarios/arrendatario', $data);
+                            $this->load->view('templates/footer');
                             
             } else {
                 
@@ -246,8 +240,8 @@ class Usuarios extends CI_Controller {
             }
             
             // user logout ok
-            $this->load->view('templates/header', $data);
-            $this->load->view('pages/home', $data);
+            $this->load->view('templates/header');
+            $this->load->view('usuario/auth/login', $data);
             $this->load->view('templates/footer');
             
         } else {

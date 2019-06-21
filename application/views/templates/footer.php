@@ -3,7 +3,7 @@
       Copyright &copy; estaciona.me 2019
     </div>
   </footer>
-</body>
+
   <!-- Bootstrap core JavaScript -->
   
   <script src="<?php echo base_url('bootstrap/vendor/jquery/jquery.min.js');?>"></script>
@@ -15,6 +15,6 @@
   <!-- Custom scripts for this template -->
   <script src="<?php echo base_url('bootstrap/js/grayscale.min.js');?>"></script>
 
-
+</body>
 
 </html>

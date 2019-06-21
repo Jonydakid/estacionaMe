@@ -1,10 +1,5 @@
 <?php defined('BASEPATH') OR exit('No direct script access allowed'); ?>
-
-<!-- Header -->
-  <header class="masthead">
-    <div class="container d-flex h-100 align-items-center">
-      <div class="mx-auto text-center">
-      	<div class="container">
+<div class="container">
 	<div class="row">
 		<?php if (validation_errors()) : ?>
 			<div class="col-md-12">
@@ -34,12 +29,8 @@
 					<input type="email" class="form-control" id="email" name="email">
 				</div>
 				<div class="form-group">
-				<label for="rol">Rol Usuario</label>
-				<select name="rol">
-				  <option value="1">Administrador</option>
-				  <option value="2">Arrendador</option>
-				  <option value="3">Arrendatario</option>
-				</select>  
+					<label for="rol">Rol</label>
+					<input type="text" class="form-control" id="rol" name="rol">
 				</div>
 				<div class="form-group">
 					<label for="contraseña">Contraseña</label>
@@ -57,6 +48,3 @@
 		</div>
 	</div><!-- .row -->
 </div><!-- .container -->
-      </div>
-    </div>
-  </header>
