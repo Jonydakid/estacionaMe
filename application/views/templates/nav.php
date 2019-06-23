@@ -28,7 +28,5 @@
               <?php endif; ?>
             </ul>
           </div>
-        </ul>
-      </div>
     </div>
   </nav>
