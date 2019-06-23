@@ -1,3 +1,4 @@
+
 var platform = new H.service.Platform({
   app_id: 'bXEZB3NR8OQPdhLumUdA',
   app_code: 'AH7q6HHHJeKoeTtGYjyBVQ',
