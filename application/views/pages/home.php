@@ -5,21 +5,12 @@
         <h1 class="mx-auto my-0 text-uppercase">Estaciona.me</h1>
         <h2 class="text-white-50 mx-auto mt-2 mb-5">Estaciona cuando quieras, donde quieras.</h2>
         <a href="<?= site_url('registrar') ?>" class="btn btn-primary js-scroll-trigger">Únete!</a>
+        <a href="<?= site_url('arrendador') ?>" class="btn btn-primary js-scroll-trigger">Mapas!</a>
       </div>
     </div>
   </header>
   <!-- About Section -->
-  <section id="about" class="about-section text-center">
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-8 mx-auto">
-          <h2 class="text-white mb-4">Busca y estaciona a tu manera</h2>
-          <p class="text-white-50">Estaciona.me es una plataforma para buscar estacionamientos de autos en los lugares cercanos a ti, es tan simple como buscar, seleccionar y estacionar.
-        </div>
-      </div>
-      <img src="<?php echo base_url('bootstrap/img/ipad.png');?>" class="img-fluid" alt="">
-    </div>
-  </section>
+  <?php $this->load->view('usuarios/arrendador') ?>
 
   <!-- Projects Section -->
   <section id="projects" class="projects-section bg-light">

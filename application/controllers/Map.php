@@ -11,7 +11,12 @@ class Map extends CI_Controller {
 		$config['zoom']='15';
 		$this->googlemaps->initialize($config);
 		$data['map'] = $this->googlemaps->create_map();
-		$this->load->view('usuarios/arrendador',$data,false);
+
+		$this->load->view('templates/header',$data);
+		$this->load->view('templates/nav');
+		$this->load->view('usuarios/arrendador',$data);
+	
+		$this->load->view('templates/footer',$data);
 	}
 
 }

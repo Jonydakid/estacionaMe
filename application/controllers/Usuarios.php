@@ -114,24 +114,33 @@ class Usuarios extends CI_Controller {
             $email    = $this->input->post('email');
             $contraseña = $this->input->post('contraseña');
             $rol = $this->input->post('rol');
-
             if ($this->Usuarios_model->set_usuarios($nomUsuario, $email,$contraseña,$rol)) {
+
+                if ($this->Usuarios_model->verificarLogin($nomUsuario, $contraseña)) {
                 
-                if ($rol == 1) {
+                    $id      = $this->Usuarios_model->getIdByNomUsuario($nomUsuario);
+                    $usuario = $this->Usuarios_model->getById($id);
                     
-                    $this->load->view('templates/header', $data);
-                    $this->load->view('usuarios/admin', $data);
-                    $this->load->view('templates/footer');
-                }elseif ($rol == 2) {
+                    $_SESSION['id']      = (int)$usuario->id;
+                    $_SESSION['nomUsuario']     = (string)$usuario->nomUsuario;
+                    $_SESSION['logged_in']    = (bool)true;
                     
-                    $this->load->view('templates/header', $data);
-                    $this->load->view('usuarios/arrendador', $data);
-                    $this->load->view('templates/footer');
-                }elseif ($rol == 3) {
-                    
-                    $this->load->view('templates/header', $data);
-                    $this->load->view('usuarios/arrendatario', $data);
-                    $this->load->view('templates/footer');
+                    if ($rol == 1) {
+                        
+                        $this->load->view('templates/header', $data);
+                        $this->load->view('usuarios/admin', $data);
+                        $this->load->view('templates/footer');
+                    }elseif ($rol == 2) {
+                        
+                        $this->load->view('templates/header', $data);
+                        $this->load->view('usuarios/arrendador', $data);
+                        $this->load->view('templates/footer');
+                    }elseif ($rol == 3) {
+                        
+                        $this->load->view('templates/header', $data);
+                        $this->load->view('usuarios/arrendatario', $data);
+                        $this->load->view('templates/footer');
+                    } 
                 }
                 
             } else {
@@ -140,7 +149,7 @@ class Usuarios extends CI_Controller {
                 $data->error = 'Problema al crear el usuario intentelo denuevo.';
                 
                 // send error to the view
-                $this->load->view('templates/header');
+                $this->load->view('templates/header', $data);
                 $this->load->view('usuarios/auth/registrar', $data);
                 $this->load->view('templates/footer');
                 
@@ -195,17 +204,17 @@ class Usuarios extends CI_Controller {
                 // user login ok
                 if ($rol == 1) {
                     
-                    $this->load->view('templates/header');
+                    $this->load->view('templates/header', $data);
                     $this->load->view('usuarios/admin', $data);
                     $this->load->view('templates/footer');
                 }elseif ($rol == 2) {
                     
-                    $this->load->view('templates/header');
+                    $this->load->view('templates/header',$data);
                     $this->load->view('usuarios/arrendador', $data);
                     $this->load->view('templates/footer');
                 }elseif ($rol == 3) {
                     
-                    $this->load->view('templates/header');
+                    $this->load->view('templates/header', $data);
                     $this->load->view('usuarios/arrendatario', $data);
                     $this->load->view('templates/footer');
                 }
