@@ -10,7 +10,18 @@
     </div>
   </header>
   <!-- About Section -->
-  <?php $this->load->view('usuarios/arrendador') ?>
+  <section id="about" class="about-section text-center">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 mx-auto">
+          <h2 class="text-white mb-4">Busca y estaciona a tu manera</h2>
+          <p class="text-white-50">Estaciona.me es una plataforma para buscar estacionamientos de autos en los lugares cercanos a ti, es tan simple como buscar, seleccionar y estacionar.
+        </div>
+      </div>
+      <?php $this->load->view('usuarios/arrendador') ?>
+    </div>
+  </section>
+  
 
   <!-- Projects Section -->
   <section id="projects" class="projects-section bg-light">

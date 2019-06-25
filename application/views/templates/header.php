@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="description" content="">
   <meta name="author" content="">
+  <meta name="google-signin-client_id" content="229928772437-cf52rlkkc2tro5g0s255vgpe44udq42m.apps.googleusercontent.com">
 
   <title>Estaciona.me</title>
 
@@ -18,11 +19,14 @@
   <!-- Custom styles for this template -->
   <link href="<?php echo base_url('bootstrap/css/grayscale.min.css');?>" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="https://js.api.here.com/v3/3.0/mapsjs-ui.css" />
+    <!-- Scripts HERE -->
     <script type="text/javascript" src="https://js.api.here.com/v3/3.0/mapsjs-core.js"></script>
     <script type="text/javascript" src="https://js.api.here.com/v3/3.0/mapsjs-service.js"></script>
     <script type="text/javascript" src="https://js.api.here.com/v3/3.0/mapsjs-ui.js"></script>
     <script type="text/javascript" src="https://js.api.here.com/v3/3.0/mapsjs-mapevents.js"></script>
-<script type="text/javascript" src="https://js.api.here.com/v3/3.0/mapsjs-places.js"></script>
+    <script type="text/javascript" src="https://js.api.here.com/v3/3.0/mapsjs-places.js"></script>
+    <!-- Autenticación con google -->
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
 </head>
 <body id="page-top">
 <?php $this->load->view('templates/nav'); ?>
