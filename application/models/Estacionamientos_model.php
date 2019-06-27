@@ -14,8 +14,16 @@ class Estacionamientos_model extends CI_Model{
 
 
 		    $data = array(
+		        
+		        'metrosCuadrados' => $this->input->post('metrosCuadrados'),
+		        'valorxHora' => $this->input->post('valorxHora'),
+		        'valorxDia' => $this->input->post('valorxDia'),
+		        'valorxMes' => $this->input->post('valorxDia'),
+		        'idArredatario' => $this->input->post('idArredatario'),
 		        'idDireccion' => $this->input->post('idDireccion'),
-		        'metrosCuadrados' => $this->input->post('metrosCuadrados')
+		        
+
+
 		    );
 
 		    return $this->db->insert('estacionamientos', $data);
@@ -31,8 +39,13 @@ class Estacionamientos_model extends CI_Model{
 		public function updateData($id){
 
 		    $data = array(
+		        'metrosCuadrados' => $this->input->post('metrosCuadrados'),
+		        'valorxHora' => $this->input->post('valorxHora'),
+		        'valorxDia' => $this->input->post('valorxDia'),
+		        'valorxMes' => $this->input->post('valorxDia'),
+		        'idArredatario' => $this->input->post('idArredatario'),
 		        'idDireccion' => $this->input->post('idDireccion'),
-		        'metrosCuadrados' => $this->input->post('metrosCuadrados')
+		        
 		    );
 
 		    $this->db->where('id',$id);
@@ -45,6 +58,14 @@ class Estacionamientos_model extends CI_Model{
 		    $this->db->where('id',$id);
 		    $this->db->delete('estacionamientos');
 
+		}
+		public function getNombreDireccion($idDireccion){
+
+			$query = $this->db->query(
+				'SELECT direccion.nombre, direccion.longitud, direccion.longitud 
+					FROM tbl_user 
+					INNER JOIN tbl_usercategory
+					 ON tbl_usercategory.usercategoryid = tbl_user.usercategoryid');
 		}
 
 }

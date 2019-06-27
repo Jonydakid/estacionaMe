@@ -10,7 +10,7 @@
     </div>
   </header>
   <!-- About Section -->
-  <section id="about" class="about-section text-center">
+  <section id="about" class="about-section bg-light">
     <div class="container">
       <div class="row">
         <div class="col-lg-8 mx-auto">
@@ -18,7 +18,7 @@
           <p class="text-white-50">Estaciona.me es una plataforma para buscar estacionamientos de autos en los lugares cercanos a ti, es tan simple como buscar, seleccionar y estacionar.
         </div>
       </div>
-      <?php $this->load->view('usuarios/arrendador') ?>
+      <?php $this->load->view('usuarios/arrendatario') ?>
     </div>
   </section>
   
@@ -86,14 +86,7 @@
       <div class="row">
         <div class="col-md-10 col-lg-8 mx-auto text-center">
 
-          <i class="far fa-paper-plane fa-2x mb-2 text-white"></i>
-          <h2 class="text-white mb-5">(Por editar)</h2>
-
-          <form class="form-inline d-flex">
-            <input type="email" class="form-control flex-fill mr-0 mr-sm-2 mb-3 mb-sm-0" id="inputEmail" placeholder="Enter email address...">
-            <button type="submit" class="btn btn-primary mx-auto">(Por editar)</button>
-          </form>
-
+          <?php $this->load->view('usuarios/arrendador') ?>
         </div>
       </div>
     </div>
