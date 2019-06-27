@@ -18,7 +18,7 @@
           <p class="text-white-50">Estaciona.me es una plataforma para buscar estacionamientos de autos en los lugares cercanos a ti, es tan simple como buscar, seleccionar y estacionar.
         </div>
       </div>
-      <?php $this->load->view('usuarios/arrendador') ?>
+      <?php $this->load->view('usuarios/arrendatario') ?>
     </div>
   </section>
   

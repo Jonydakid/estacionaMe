@@ -46,6 +46,14 @@ class Estacionamientos_model extends CI_Model{
 		    $this->db->delete('estacionamientos');
 
 		}
+		pubic function getNombreDireccion($idDireccion){
+
+			$query = $this->db->query(
+				'SELECT direccion.nombre, direccion.longitud, direccion.longitud 
+					FROM tbl_user 
+					INNER JOIN tbl_usercategory
+					 ON tbl_usercategory.usercategoryid = tbl_user.usercategoryid');
+		}
 
 }
  ?>
