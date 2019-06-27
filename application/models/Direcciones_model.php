@@ -25,7 +25,11 @@ class Direcciones_model extends CI_Model {
 		    	'Region' => $this->input->post('Region'),
 		    	'Comuna' => $this->input->post('Comuna'),
 		    	'Calle' => $this->input->post('Calle'),
-		    	'idUsuario' => $this->input->post('idUsuario')
+		    	'idUsuario' => $this->input->post('idUsuario'),
+		    	'Ciudad' => $this->input->post('Ciudad'),
+		    	'Calle' => $this->input->post('Calle'),
+		        'Longitud' => $this->input->post('longitud'),
+		        'Latitud' => $this->input->post('latitud')
 
 		    );
 
@@ -42,11 +46,12 @@ class Direcciones_model extends CI_Model {
 		public function updateData($id){
 
 		    $data = array(
-
 		    	'Region' => $this->input->post('Region'),
 		    	'Comuna' => $this->input->post('Ciudad'),
 		    	'Calle' => $this->input->post('Calle'),
-		    	'idUsuario' => $this->input->post('idUsuario')
+		    	'idUsuario' => $this->input->post('idUsuario'),
+		        'idDireccion' => $this->input->post('idDireccion'),
+		        'metrosCuadrados' => $this->input->post('metrosCuadrados')
 		    );
 
 		    $this->db->where('id',$id);

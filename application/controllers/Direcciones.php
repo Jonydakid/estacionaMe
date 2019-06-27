@@ -12,24 +12,40 @@ class Direcciones extends CI_Controller {
 
         public function index()
         {
-            $data['direcciones'] = $this->Direcciones_model->get_direcciones();
+        $data['direcciones'] = $this->Direcciones_model->get_direcciones();
+        $data['title'] = 'Direccion';
 
         $this->load->view('templates/header', $data);
         $this->load->view('direcciones/index', $data);
         $this->load->view('templates/footer');
         }
+     public function view()
+        {
+                $data['direcciones'] = $this->Direcciones_model->get_direcciones();
 
+                if (empty($data['direcciones']))
+                {
+                        show_404();
+                }
+
+                $data['title'] = $data['direcciones']['title'];
+
+                $this->load->view('templates/header', $data);
+                $this->load->view('direcciones/view', $data);
+                $this->load->view('templates/footer');
+        }
         public function create()
         {
             $this->load->helper('form');
             $this->load->library('form_validation');
 
             $data['title'] = 'Crear Direccion';
-
             $this->form_validation->set_rules('Region', 'Region', 'required');
             $this->form_validation->set_rules('Comuna', 'Comuna', 'required');
             $this->form_validation->set_rules('Calle', 'Calle', 'required');
             $this->form_validation->set_rules('idUsuario', 'idUsuario', 'required');ç
+            $this->form_validation->set_rules('idDireccion', 'idDireccion', 'required');
+            $this->form_validation->set_rules('metrosCuadrados', 'metrosCuadrados', 'required');
 
             if ($this->form_validation->run() === FALSE)
             {
