@@ -3,13 +3,14 @@ function onSignIn(googleUser) {
 
 	var xhr = new XMLHttpRequest();
 	
-    xhr.open('POST', "<?php echo site_url('gauth/getData'); ?>");
+    xhr.open('POST', "gauth/index");
 	xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
 	
 	
 	xhr.onload = function() {
 	  console.log('Signed in as: ' + xhr.responseText);
-	};
+	}
+
 	xhr.send('idtoken=' + token);
 }
 
@@ -35,6 +36,7 @@ function renderButton() {
 	'width': 150,
 	'height': 50,
 	'longtitle': false,
+	'X-Requested-With': 'XMLHttpRequest',
 	'theme': 'dark',
 	'onsuccess': onSignIn,
 	'onfailure': onFailure
