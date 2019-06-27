@@ -2,7 +2,7 @@
   <header class="masthead">
     <div class="container d-flex h-100 align-items-center">
       <div class="mx-auto text-center">
-        <h1 class="mx-auto my-0 text-uppercase">Estaciona.me</h1>
+        <h1 class="mx-auto my-0 text-uppercase">Estaci-on</h1>
         <h2 class="text-white-50 mx-auto mt-2 mb-5">Estaciona cuando quieras, donde quieras.</h2>
         <a href="<?= site_url('registrar') ?>" class="btn btn-primary js-scroll-trigger">Únete!</a>
         <a href="<?= site_url('arrendador') ?>" class="btn btn-primary js-scroll-trigger">Mapas!</a>

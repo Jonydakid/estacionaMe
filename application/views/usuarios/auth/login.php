@@ -24,9 +24,8 @@
 			<div class="page-header">
 				<h1>Login</h1>
 			</div>
-				<div class="g-signin2" data-onsuccess="onSignIn">
-					
-				</div>
+				<div id="my-signin2"></div>
+				  
 			<?= form_open() ?>
 				<div class="form-group">
 					<label for="nomUsuario">Usuario</label>

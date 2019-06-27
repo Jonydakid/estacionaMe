@@ -17,6 +17,7 @@ class Usuarios extends CI_Controller {
             $data['title'] = 'Usuarios';
 
             $this->load->view('templates/header', $data);
+            $this->load->view('templates/nav');
             $this->load->view('usuarios/index', $data);
             $this->load->view('templates/footer');
         }
@@ -33,6 +34,7 @@ class Usuarios extends CI_Controller {
                 
 
                 $this->load->view('templates/header', $data);
+                $this->load->view('templates/nav');
                 $this->load->view('usuarios/view', $data);
                 $this->load->view('templates/footer');
         }
@@ -51,6 +53,7 @@ class Usuarios extends CI_Controller {
             if ($this->form_validation->run() === FALSE)
             {
                 $this->load->view('templates/header', $data);
+                $this->load->view('templates/nav');
                 $this->load->view('usuarios/create');
                 $this->load->view('templates/footer');
 
@@ -59,6 +62,7 @@ class Usuarios extends CI_Controller {
             {
                 $this->Usuarios_model->set_usuarios();
                 $this->load->view('templates/header', $data);
+                $this->load->view('templates/nav');
                 $this->load->view('usuarios/success');
                 $this->load->view('templates/footer');
 
@@ -69,6 +73,7 @@ class Usuarios extends CI_Controller {
                  $data['row'] = $this->Usuarios_model->getById($id);
 
                 $this->load->view('templates/header', $data);
+                $this->load->view('templates/nav');
                 $this->load->view('usuarios/edit', $data);
                 $this->load->view('templates/footer');
         }
@@ -104,6 +109,7 @@ class Usuarios extends CI_Controller {
             
             // validation not ok, send validation errors to the view
             $this->load->view('templates/header');
+            $this->load->view('templates/nav');
             $this->load->view('usuarios/auth/registrar', $data);
             $this->load->view('templates/footer');
             
@@ -128,16 +134,19 @@ class Usuarios extends CI_Controller {
                     if ($rol == 1) {
                         
                         $this->load->view('templates/header', $data);
+                        $this->load->view('templates/nav');
                         $this->load->view('usuarios/admin', $data);
                         $this->load->view('templates/footer');
                     }elseif ($rol == 2) {
                         
                         $this->load->view('templates/header', $data);
+                        $this->load->view('templates/nav');
                         $this->load->view('usuarios/arrendador', $data);
                         $this->load->view('templates/footer');
                     }elseif ($rol == 3) {
                         
                         $this->load->view('templates/header', $data);
+                        $this->load->view('templates/nav');
                         $this->load->view('usuarios/arrendatario', $data);
                         $this->load->view('templates/footer');
                     } 
@@ -150,6 +159,7 @@ class Usuarios extends CI_Controller {
                 
                 // send error to the view
                 $this->load->view('templates/header', $data);
+                $this->load->view('templates/nav');
                 $this->load->view('usuarios/auth/registrar', $data);
                 $this->load->view('templates/footer');
                 
@@ -182,6 +192,7 @@ class Usuarios extends CI_Controller {
             
             // validation not ok, send validation errors to the view
             $this->load->view('templates/header');
+            $this->load->view('templates/nav');
             $this->load->view('usuarios/auth/login');
             $this->load->view('templates/footer');
             
@@ -205,16 +216,19 @@ class Usuarios extends CI_Controller {
                 if ($rol == 1) {
                     
                     $this->load->view('templates/header', $data);
+                    $this->load->view('templates/nav');
                     $this->load->view('usuarios/admin', $data);
                     $this->load->view('templates/footer');
                 }elseif ($rol == 2) {
                     
                     $this->load->view('templates/header',$data);
+                    $this->load->view('templates/nav');
                     $this->load->view('usuarios/arrendador', $data);
                     $this->load->view('templates/footer');
                 }elseif ($rol == 3) {
                     
                     $this->load->view('templates/header', $data);
+                    $this->load->view('templates/nav');
                     $this->load->view('usuarios/arrendatario', $data);
                     $this->load->view('templates/footer');
                 }
@@ -226,6 +240,7 @@ class Usuarios extends CI_Controller {
                 
                 // send error to the view
                 $this->load->view('templates/header');
+                $this->load->view('templates/nav');
                 $this->load->view('usuarios/auth/login', $data);
                 $this->load->view('templates/footer');
                 
@@ -256,6 +271,7 @@ class Usuarios extends CI_Controller {
             
             // user logout ok
             $this->load->view('templates/header', $data);
+            $this->load->view('templates/nav');
             $this->load->view('pages/home', $data);
             $this->load->view('templates/footer');
             

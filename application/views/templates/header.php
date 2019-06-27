@@ -7,8 +7,9 @@
   <meta name="author" content="">
   <meta name="google-signin-client_id" content="229928772437-cf52rlkkc2tro5g0s255vgpe44udq42m.apps.googleusercontent.com">
 
-  <title>Estaciona.me</title>
-
+  <title>Estaci-on</title>
+  
+  
   <!-- Bootstrap core CSS -->
   <link type="text/css" href="<?php echo base_url('bootstrap/vendor/bootstrap/css/bootstrap.min.css');?>" rel="stylesheet"> 
   <!-- Custom fonts for this template -->
@@ -26,7 +27,51 @@
     <script type="text/javascript" src="https://js.api.here.com/v3/3.0/mapsjs-mapevents.js"></script>
     <script type="text/javascript" src="https://js.api.here.com/v3/3.0/mapsjs-places.js"></script>
     <!-- Autenticación con google -->
-    <script src="https://apis.google.com/js/platform.js" async defer></script>
+    
+    <script src="https://apis.google.com/js/platform.js?onload=renderButton" async defer></script>
+    <script type="text/javascript">
+      function onSignIn(googleUser) {
+  var token = googleUser.getAuthResponse().id_token;
+
+  var xhr = new XMLHttpRequest();
+  
+    xhr.open('POST', "<?php echo site_url('gauth/getdata'); ?>");
+  xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+  
+  
+  xhr.onload = function() {
+    console.log('Signed in as: ' + xhr.responseText);
+  };
+}
+
+function signOut() {
+    var auth2 = gapi.auth2.getAuthInstance();
+    auth2.signOut().then(function () {
+      console.log('User signed out.');
+    });
+}
+
+
+function onSuccess(googleUser) {
+  var profile= googleUser.getBasicProfile().g;
+  }
+
+function onFailure(error) {
+  console.log(error);
+}
+
+function renderButton() {
+  gapi.signin2.render('my-signin2', {
+  'scope': 'profile email',
+  'width': 150,
+  'height': 50,
+  'longtitle': false,
+  'theme': 'dark',
+  'onsuccess': onSignIn,
+  'onfailure': onFailure
+  });
+}
+    </script>
 </head>
 <body id="page-top">
-<?php $this->load->view('templates/nav'); ?>
+<?php  ?>
