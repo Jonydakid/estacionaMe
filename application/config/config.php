@@ -24,7 +24,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 |
 */
 
-$config['base_url'] = 'http://localhost/estacioname';
+$config['base_url'] = 'http://www.estacion.com/estacion';
 /*
 |--------------------------------------------------------------------------
 | Index File

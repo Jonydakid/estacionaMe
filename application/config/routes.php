@@ -51,9 +51,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 */
 $route['default_controller'] = 'pages';
 $route['gauth'] = 'gauth';
-$route['gauth/getdata'] = 'gauth/getdata';
+$route['gauth/profile'] = 'gauth/profile';
 $route['gauth/logout'] = 'gauth/logout';
-$route['gauth/getData'] = 'gauth/getdata';
 $route['usuarios/index'] = 'usuarios/index';
 $route['usuarios/create'] = 'usuarios/create';
 $route['usuarios/(:any)'] = 'usuarios/view/$1';

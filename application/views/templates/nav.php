@@ -14,9 +14,12 @@
           <li class="nav-item">
             <a  class="nav-link js-scroll-trigger" href="#projects">Proyecto</a>
           </li>
-          <?php if (isset($_SESSION['nomUsuario']) && $_SESSION['logged_in'] === true) : ?>
+          <?php if (isset($_SESSION['user']) && $_SESSION['loggedIn'] === true) : ?>
                 <li class="nav-item">
-                  <a class="nav-link js-scroll-trigger" href="<?= site_url('logout') ?>">Logout</a>
+                  <a id="btnLogOut" class="nav-link js-scroll-trigger" href="<?= site_url('gauth/logout') ?>">Logout</a>
+                  <script type="text/javascript">
+                    document.getElementById("btnLogOut").onclick = signOut;
+                  </script>
                 </li>
               <?php else : ?>
                 <li class="nav-item">

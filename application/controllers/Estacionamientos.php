@@ -16,6 +16,7 @@ class Estacionamientos extends CI_Controller {
         $data['title'] = 'Estacionamiento';
 
         $this->load->view('templates/header', $data);
+        $this->load->view('templates/nav');
         $this->load->view('estacionamientos/index', $data);
         $this->load->view('templates/footer');
         }
@@ -32,6 +33,7 @@ class Estacionamientos extends CI_Controller {
                 $data['title'] = $data['estacionamientos']['title'];
 
                 $this->load->view('templates/header', $data);
+                $this->load->view('templates/nav');
                 $this->load->view('estacionamientos/view', $data);
                 $this->load->view('templates/footer');
         }
@@ -48,6 +50,7 @@ class Estacionamientos extends CI_Controller {
             if ($this->form_validation->run() === FALSE)
             {
                 $this->load->view('templates/header', $data);
+                $this->load->view('templates/nav');
                 $this->load->view('estacionamientos/create');
                 $this->load->view('templates/footer');
 
@@ -56,6 +59,7 @@ class Estacionamientos extends CI_Controller {
             {
                 $this->Estacionamientos_model->set_estacionamientos();
                 $this->load->view('templates/header', $data);
+                $this->load->view('templates/nav');
                 $this->load->view('estacionamientos/success');
                 $this->load->view('templates/footer');
 
@@ -66,6 +70,7 @@ class Estacionamientos extends CI_Controller {
                  $data['row'] = $this->Estacionamientos_model->getById($id);
 
                 $this->load->view('templates/header', $data);
+                $this->load->view('templates/nav');
                 $this->load->view('estacionamientos/edit', $data);
                 $this->load->view('templates/footer');
         }

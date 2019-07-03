@@ -1,4 +1,5 @@
 <?php defined('BASEPATH') OR exit('No direct script access allowed'); ?>
+ 
  <header class="masthead">
     <div class="container d-flex h-100 align-items-center">
       <div class="mx-auto text-center">
@@ -24,7 +25,7 @@
 			<div class="page-header">
 				<h1>Login</h1>
 			</div>
-				<div id="my-signin2"></div>
+				
 				  
 			<?= form_open() ?>
 				<div class="form-group">

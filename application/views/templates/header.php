@@ -5,7 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="description" content="">
   <meta name="author" content="">
-  <meta name="google-signin-client_id" content="229928772437-cf52rlkkc2tro5g0s255vgpe44udq42m.apps.googleusercontent.com">
+  <meta name="google-signin-client_id" content="36360112674-fhdp3m1btvr00fsefv4rsnieo2u0vuov.apps.googleusercontent.com">
+  <meta name="google-signin-scope" content="profile email">
 
   <title>Estaci-on</title>
   
@@ -27,9 +28,9 @@
     <script type="text/javascript" src="https://js.api.here.com/v3/3.0/mapsjs-mapevents.js"></script>
     <script type="text/javascript" src="https://js.api.here.com/v3/3.0/mapsjs-places.js"></script>
     <!-- Autenticación con google -->
-    <script src="<?php echo base_url('bootstrap/js/googleauth.js');?>"></script>
     <script src="https://apis.google.com/js/platform.js?onload=renderButton" async defer></script>
+    <script src="<?php echo base_url('bootstrap/js/googleauth.js');?>"></script>
     
 </head>
-<body id="page-top">
+<body id="page-top">  
 <?php  ?>

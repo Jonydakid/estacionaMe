@@ -25,13 +25,14 @@
 				<h1>Registrar</h1>
 			</div>
 			<?= form_open() ?>
+			<div id="my-signin2"></div>
 				<div class="form-group">
 					<label for="nomUsuario">Nombre Usuario</label>
-					<input type="text" class="form-control" id="nomUsuario" name="nomUsuario">
+					<input type="text" class="form-control" id="nomUsuario" name="nomUsuario" placeholder="<?php echo $this->session->user["nombre"];?>">
 				</div>
 				<div class="form-group">
 					<label for="email">Email</label>
-					<input type="email" class="form-control" id="email" name="email">
+					<input type="email" class="form-control" id="email" name="email" placeholder="<?php echo $this->session->user["email"];?>">
 				</div>
 				<div class="form-group">
 				<label for="rol">Rol Usuario</label>

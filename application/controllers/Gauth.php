@@ -1,32 +1,55 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 class Gauth extends CI_Controller {
-     function __construct() {
+     function __construct(){
         parent::__construct();
-        $this->load->library('google');
+        
+        
+        // Load user model
+        $this->load->model('user_model');
     }
+    
     public function index(){
-        $data['google_login_url']=$this->google->get_login_url();
-        $this->load->view('home',$data);
+
+        
+        if (isset($_POST['user'])) {
+            //Decodifica el json enviado a través de js
+            $user=json_decode($_POST['user'],true);
+            //Le agrego un elemento al array para el estado de la sesión del usuario
+            $this->session->set_userdata('loggedIn', true);
+            //Setea una sesión con los datos rescatados al momento del signin con google
+            $this->session->set_userdata('user',$user);
+
+        }
+        
+
     }
-    public function getData(){
-        $google_data=$this->google->validate();
-        $session_data=array(
-                'name'=>$google_data['name'],
-                'email'=>$google_data['email'],
-                'source'=>'google',
-                'profile_pic'=>$google_data['profile_pic'],
-                'link'=>$google_data['link'],
-                'sess_logged_in'=>1
-                );
-            $this->session->set_userdata($session_data);
-        redirect(base_url());
+    
+    public function profile(){
+        // Redirect to login page if the user not logged in
+        if(!$this->session->userdata('loggedIn')){
+            redirect('/gauth/');
+        }
+        
+        // Get user info from session
+        $data['user'] = $this->session->userdata('user');
+        
+        // Load user profile view
+        $this->load->view('usuarios/perfil',$data);
     }
-    public function logout(){
-        session_destroy();
-        unset($_SESSION['access_token']);
-        $session_data=array(
-                'sess_logged_in'=>0);
-        $this->session->set_userdata($session_data);
-        redirect(base_url());
+    
+    public function logout(){        
+        // Remove token and user data from the session
+        $this->session->unset_userdata('loggedIn');
+        $this->session->unset_userdata('user');
+        
+        // Destroy entire session data
+        $this->session->sess_destroy();
+        
+        // Redirect to login page
+        $this->load->view('templates/header');
+        $this->load->view('templates/nav');
+        $this->load->view('pages/home');
+        $this->load->view('templates/footer');
     }
+    
 }

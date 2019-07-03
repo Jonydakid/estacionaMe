@@ -22,4 +22,14 @@ class Pages extends CI_Controller{
                 $this->load->view('templates/footer', $data);
         }
 
+        public function test()
+        {
+                $this->load->library(array('session'));
+                $data['title'] = 'Test';
+
+                $this->load->view('templates/header', $data);
+                $this->load->view('templates/nav');
+                $this->load->view('test');
+                $this->load->view('templates/footer', $data);
         }
+}
